@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  test:
+    build: .
+    environment:
+      - DOMAINS=example.com,www.example.com
+      - EMAIL=admin@example.com
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /var/letsencrypt:/etc/letsencrypt
